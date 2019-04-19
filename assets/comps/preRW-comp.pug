@@ -1,0 +1,22 @@
+preRW-comp
+
+   script.
+      //- specific:
+      const config = {
+         apiKey: 'asdfgt' + 'asxdcevf' //- + is to help obfuscate
+         authDomain: 'someapp.firebaseapp.com',
+         projectId: 'someapp'
+      }
+
+      //- example use ///////////////////////////////////////////////////////////
+      /* put in header or better yet in a RIOT tag
+      */
+      //- in FireBase set:
+      //- allow read
+
+      //- Firebase setup
+      window.firebase.initializeApp(config)
+      window.auth =firebase.auth()
+      auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+
+      window.db1  = window.firebase.firestore()

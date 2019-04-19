@@ -1,0 +1,3 @@
+
+riot.tag2('form-comp', '<form> <div class="form-group"> <label class="form-label">Orixe</label> <input class="form-input" type="text" name="departure" value="" placeholder="Ponteareas"> </div> <div class="form-group"> <label class="form-label">Destino</label> <input class="form-input" type="text" name="destination" value="" placeholder="Vigo"> </div> <button class="btn btn-primary float-right">Buscar</button> </form>', '', '', function(opts) {
+});

@@ -1,0 +1,52 @@
+doctype html
+html
+   head
+      //- Mobile only: <script src="http://console.re/connector.js" data-channel="MY_NAME" id="consolerescript"></script>
+      script.
+         ROOT = '#{ROOT}' //- Mobile only: sets global pug and .js from dat.yaml
+         console.info('ROOT','#{ROOT}')
+         let _start = Date.now()
+      meta(charset='utf-8')
+
+      meta(name='viewport', content='width=device-width, initial-scale=1')
+      link(rel='shortcut icon', href= ROOT + 'assets/favicon.ico', type='image/x-icon')
+
+      //- loading for minimal total latency and max parallel
+      //- needed for client-side data
+      script(src='//www.gstatic.com/firebasejs/5.9.1/firebase-app.js')
+      script(src='//www.gstatic.com/firebasejs/5.9.1/firebase-auth.js')
+      script(src='//www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js')
+
+      //- needed to start
+      script(src='//cdn.jsdelivr.net/npm/johnnydepp@0.1.0/dist/depp.min.js')
+      script(src='//cdn.jsdelivr.net/npm/riot@3.13.2/riot.min.js')
+
+      //- spectre css
+      link(rel='stylesheet', href='https://unpkg.com/spectre.css/dist/spectre.min.css')
+      link(rel='stylesheet', href='https://unpkg.com/spectre.css/dist/spectre-exp.min.css')
+      link(rel='stylesheet', href='https://unpkg.com/spectre.css/dist/spectre-icons.min.css')
+
+      link(href="https://unpkg.com/tabulator-tables@4.2.4/dist/css/tabulator_simple.min.css" rel="stylesheet")
+      script(type="text/javascript" src="https://unpkg.com/tabulator-tables@4.2.4/dist/js/tabulator.min.js")
+
+      script(src="//instant.page/1.2.2", type="module", integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU")
+   body
+
+      //- load components
+      d-hide
+         script(src='/assets/comps/preRW-comp.js')
+         script(src='/assets/comps/form-comp.js')
+
+         //- fb setup:
+         preRW-comp
+         script.
+            window.preRWcomp = riot.mount('preRW-comp')[0]
+
+         //-top
+         //-header
+
+         //-main
+         #router
+            block main
+
+      script.

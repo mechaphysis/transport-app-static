@@ -1,0 +1,30 @@
+extends /layout/layout
+//- App Shell
+
+block main
+   .container.columns.flex-centered
+      .column.col-6.col-xs-12
+         h4.s-subtitle.text-center ¿A que hora teño bus?
+         p Atopa facilmente os horarios dos autobuses interurbanos de Galicia.
+         form-comp
+      .column.col-9
+         #results-table
+   
+   script.
+      riot.mount('form-comp')
+      
+      depp.define({
+         'ResultsBind': [
+            ROOT + 'assets/models/ResultsViewModel.js',
+            'ResultsBind.js',
+         ]
+      })
+
+      depp.require(['ResultsBind'], setupBinding)
+
+      function setupBinding() {
+         console.info('binding', Date.now() - _start)
+
+         var tabulatorBind = new ResultsBind()
+         tabulatorBind.getViewList('results-table')
+      }
