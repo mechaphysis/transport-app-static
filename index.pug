@@ -5,23 +5,25 @@ block main
    .container.flex-centered
       .columns.pv-70
          .column-6.col-xs-12
-            .panel
-               .panel-header
-                  .panel-title 
-                     h4.s-subtitle A qué hora teño bus?
-               .panel-nav <!-- navigation components: tabs, breadcrumbs or pagination -->
-               .panel-body 
-                  p Atopa facilmente os horarios dos autobuses interurbanos de Galicia.   
-               .panel-footer
-                  form-comp
-   //-.container.flex-centered
-      .columns
-         .column.col-6.col-xl-12
-            h4.s-subtitle.text-center ¿A que hora teño bus?
-            p Atopa facilmente os horarios dos autobuses interurbanos de Galicia.
-            form-comp
-         .column.col-6.col-xl-12
-            #results-table
+            .container.pb-4
+               .panel
+                  .panel-header
+                     .panel-title 
+                        h4.s-subtitle A qué hora teño bus?
+                  .panel-nav <!-- navigation components: tabs, breadcrumbs or pagination -->
+                  .panel-body 
+                     p Atopa facilmente os horarios dos autobuses interurbanos de Galicia.   
+                  .panel-footer
+                     form-comp
+            .container
+               .panel
+                  .panel-header
+                     .panel-title 
+                        h4.s-subtitle Resultados
+                  .panel-nav <!-- navigation components: tabs, breadcrumbs or pagination -->
+                  .panel-body 
+                     #results-table   
+                  .panel-footer <!-- action buttons or inputs... -->
    
    script.
       riot.mount('form-comp')
