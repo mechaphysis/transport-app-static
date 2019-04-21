@@ -1,9 +1,33 @@
 form-comp
-        form
-            .form-group
-                label.form-label Orixe
-                input.form-input(type="text", name="departure", value="", placeholder="Ponteareas")
-            .form-group
-                label.form-label Destino
-                input.form-input(type="text", name="destination", value="", placeholder="Vigo")
-            button.btn.btn-primary.float-right Buscar
+    form
+        .form-group
+            label.form-label Orixe
+            input.form-input(type="text", name="departure", value="{this.departure}", placeholder="Ponteareas", onchange='{this.handleChangeDepart}')
+        .form-group
+            label.form-label Destino
+            input.form-input(type="text", name="destination", value="{this.destination}", placeholder="Vigo", onchange='{this.handleChangeDest}')
+        button.btn.btn-primary.float-right(onclick='{this.search}') Buscar
+
+    script.
+        this.departure = ''
+        this.destination = ''
+
+        search(ev){
+            ev.preventDefault()
+            console.log('search clicked!')
+            console.log('---print departure: ', this.departure)
+            console.log('---print destination: ', this.destination)
+        }
+
+        handleChangeDepart(ev) {
+            this.departure = ev.target.value
+        }
+        handleChangeDest(ev) {
+            this.destination = ev.target.value
+        }
+
+
+        /*$('#input-segments', this.root).change(function(){
+                _this.quantdata.segments_title = $(this).val()
+                riot.update()
+            })*/
