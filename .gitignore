@@ -1,2 +1,5 @@
 .editorconfig
 .DS_Store
+
+**/*.js
+**/*.min.js
